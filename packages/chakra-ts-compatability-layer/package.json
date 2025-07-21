@@ -1,0 +1,36 @@
+{
+  "name": "chakra-ts-compatability-layer",
+  "version": "1.0.0",
+  "description": "Bundled TypeScript types for Chakra UI v2",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./v2": {
+      "types": "./dist/v2.d.ts"
+    },
+    "./v3": {
+      "types": "./dist/v3.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "chakra-v2": "npm:@chakra-ui/react@v2-latest",
+    "chakra-v3": "npm:@chakra-ui/react@latest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.4",
+    "jsx-runtime": "^1.2.0",
+    "rollup": "^4.45.1",
+    "rollup-plugin-delete": "^3.0.1",
+    "rollup-plugin-dts": "^6.2.1",
+    "typescript": "^5.8.3"
+  }
+}
