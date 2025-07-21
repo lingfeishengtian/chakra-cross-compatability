@@ -27,3 +27,5 @@ dist-ssr
 declarations_tmp
 # Ignore TypeScript build info
 tsconfig.tsbuildinfo
+
+*.tgz
