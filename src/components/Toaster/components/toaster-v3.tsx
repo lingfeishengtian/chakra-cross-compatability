@@ -1,35 +1,27 @@
-"use client"
+"use client";
 
-import * as chakra from "@chakra-ui/react"
-import { setV3CreateToaster } from "../globals";
+import * as chakra from "@chakra-ui/react";
 import { chakraVersion } from "../../../global/chakraVersion";
+import { setV3CreateToaster } from "../globals";
 
-const InternalV3Toaster = (
-  () => {
-    if (chakraVersion !== "3") return null;
+const InternalV3Toaster = (() => {
+  if (chakraVersion !== "3") return null;
 
-    const {
-      createToaster,
-    } = chakra;
+  const { createToaster } = chakra;
 
-    const internalCreatedToaster = createToaster({
-      pauseOnPageIdle: true,
-    });
+  const internalCreatedToaster = createToaster({
+    pauseOnPageIdle: true,
+  });
 
-    setV3CreateToaster(internalCreatedToaster.create);
-
-    return internalCreatedToaster;
-  }
-)()
+  setV3CreateToaster((options) => {
+    internalCreatedToaster.attrs.placement = options.placement || "bottom";
+    internalCreatedToaster.create(options);
+  });
+  return internalCreatedToaster;
+})();
 
 export const Toaster = () => {
-  const {
-    Toaster: ChakraToaster,
-    Portal,
-    Spinner,
-    Stack,
-    Toast,
-  } = chakra;
+  const { Toaster: ChakraToaster, Portal, Spinner, Stack, Toast } = chakra;
 
   return (
     <Portal>
@@ -55,5 +47,5 @@ export const Toaster = () => {
         )}
       </ChakraToaster>
     </Portal>
-  )
-}
+  );
+};

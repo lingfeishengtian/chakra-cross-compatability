@@ -9,12 +9,6 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts"
-    },
-    "./v2": {
-      "types": "./dist/v2.d.ts"
-    },
-    "./v3": {
-      "types": "./dist/v3.d.ts"
     }
   },
   "scripts": {
@@ -24,6 +18,10 @@
   "dependencies": {
     "chakra-v2": "npm:@chakra-ui/react@v2-latest",
     "chakra-v3": "npm:@chakra-ui/react@latest"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.1.4",
