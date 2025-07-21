@@ -10,20 +10,30 @@ export type Merge<T, U> = {
     : never;
 };
 
+/**
+ * Converts a tuple of translations into a mapped type.
+ * For example, [['en', 'English'], ['fr', 'French']] becomes { en: 'English', fr: 'French' }.
+ */
 export type TupleToMappedType<
   Translations extends ReadonlyArray<readonly [string, string]>
 > = {
   [E in Translations[number] as E[0]]: E[1];
 };
 
+/**
+ * Translates props based on the provided translation type
+ */
 type TranslatedPropsType<
   Translations extends ReadonlyArray<readonly [string, string]>,
   Props
 > = {
-  // @ts-ignore
+  // @ts-ignore: Since we build the package using Chakra v3, this will complain when we're trying to convert to a prop that doesn't exist in Chakra v2.
   [K in keyof TupleToMappedType<Translations>]?: Props[TupleToMappedType<Translations>[K]];
 };
 
+/**
+ * Combines translations with additional props depending on the Chakra version.
+ */
 export type PropType<
   Translations extends ReadonlyArray<readonly [string, string]>,
   Props
