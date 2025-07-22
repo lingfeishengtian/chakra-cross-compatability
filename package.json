@@ -1,7 +1,7 @@
 {
   "name": "chakra-cross-compatibility",
   "description": "A library to provide cross-version compatibility for Chakra UI components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist"
