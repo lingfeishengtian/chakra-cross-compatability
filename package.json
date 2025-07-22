@@ -1,14 +1,14 @@
 {
   "name": "chakra-cross-compatibility",
-  "private": true,
+  "description": "A library to provide cross-version compatibility for Chakra UI components",
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "main": "dist/my-library.cjs.js",
-  "module": "dist/my-library.es.js",
+  "main": "dist/chakra-cross-compatibility.cjs.js",
+  "module": "dist/chakra-cross-compatibility.es.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -21,7 +21,6 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "chakra-ts-compatibility-layer": "./packages/chakra-ts-compatibility-layer",
     "@chakra-ui/react": "^3.22.0",
     "@eslint/js": "^9.30.1",
     "@rollup/plugin-typescript": "^12.1.4",
@@ -29,6 +28,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^4.6.0",
+    "chakra-ts-compatibility-layer": "./packages/chakra-ts-compatibility-layer",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -40,5 +40,8 @@
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3"
   }
 }

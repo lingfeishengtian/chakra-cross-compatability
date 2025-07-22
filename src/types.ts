@@ -10,6 +10,10 @@ export type Merge<T, U> = {
     : never;
 };
 
+export type UniversalNewProps = {
+  asChild?: boolean;
+};
+
 /**
  * Converts a tuple of translations into a mapped type.
  * For example, [['en', 'English'], ['fr', 'French']] becomes { en: 'English', fr: 'French' }.
@@ -38,5 +42,5 @@ export type PropType<
   Translations extends ReadonlyArray<readonly [string, string]>,
   Props
 > = ChakraVersion extends "2"
-  ? TranslatedPropsType<Translations, Props> & Props
+  ? TranslatedPropsType<Translations, Props> & Props & UniversalNewProps
   : Props;

@@ -14,7 +14,12 @@ export default defineConfig({
     },
     rollupOptions: {
       // Externalize deps that shouldn't be bundled
-      external: ["react", "react-dom", "@chakra-ui/react"],
+      external: [
+        "react",
+        "react-dom",
+        "@chakra-ui/react",
+        /^react(?:\/[\w-]+)*$/,
+      ],
       output: {
         globals: {
           react: "React",
@@ -29,7 +34,7 @@ export default defineConfig({
     dts({
       tsconfigPath: path.resolve(__dirname, "tsconfig.app.json"),
       rollupTypes: true,
-      bundledPackages: ["chakra-ts-compatability-layer"], // Include bundled packages
+      bundledPackages: ["chakra-ts-compatibility-layer"], // Include bundled packages
     }),
   ],
 });

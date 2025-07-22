@@ -3,8 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react/styled-system";
 import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
-import { Button, Toaster, toaster } from "./components";
-import viteLogo from "/vite.svg";
+import { Button, Menu, Portal, Toaster, toaster } from "./components";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,9 +11,7 @@ function App() {
   return (
     <ChakraProvider value={defaultSystem}>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+        <a href="https://vite.dev" target="_blank"></a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -56,6 +53,27 @@ function App() {
       >
         New Invoice
       </Button>
+
+      <Menu.Root positioning={{ placement: "top" }}>
+        <Menu.Trigger colorPalette="red" asChild>
+          <Button variant="surface" colorPalette="red">
+            Open Menu
+          </Button>
+        </Menu.Trigger>
+
+        <Portal>
+          <Menu.Positioner>
+            <Menu.Content>
+              <Menu.Item value="item-1">Item 1</Menu.Item>
+
+              <Menu.Separator />
+
+              <Menu.Item value="item-2">Item 2</Menu.Item>
+              <Menu.Item value="item-3">Item 3</Menu.Item>
+            </Menu.Content>
+          </Menu.Positioner>
+        </Portal>
+      </Menu.Root>
     </ChakraProvider>
   );
 }
