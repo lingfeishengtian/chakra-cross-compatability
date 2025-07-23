@@ -1,7 +1,7 @@
 {
     "name": "chakra-cross-compatibility",
     "description": "A library to provide cross-version compatibility for Chakra UI components",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "module",
     "files": [
         "dist"
@@ -35,7 +35,6 @@
         "@types/react-dom": "^18.0.0",
         "@vitejs/plugin-react": "^4.6.0",
         "chakra-ts-compatibility-layer": "./packages/chakra-ts-compatibility-layer",
-        "cross-compatible-stories": "./packages/cross-compatible-stories",
         "eslint": "^9.30.1",
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-react-refresh": "^0.4.20",

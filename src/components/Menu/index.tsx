@@ -47,7 +47,33 @@ type TriggerProps = PropType<typeof v2MenuPropEntries, BaseMenuTriggerProps>;
 const MenuTrigger: ForwardedRefComponent<TriggerProps> = createCompatibleComponent(
     // @ts-ignore
     chakraVersion === '3' ? chakra.Menu.Trigger : chakra.MenuButton,
-    v2MenuPropEntries
+    v2MenuPropEntries,
+    (props) => {
+        const { sx } = props;
+        const newSxProps = {
+            ...sx,
+            '& > *': {
+                ...(sx?.['& > *'] ?? {}),
+                display: 'inherit',
+                flex: 'inherit',
+                flexDirection: 'inherit',
+                height: 'inherit',
+                width: 'inherit',
+                gap: 'inherit',
+                padding: 'inherit',
+                margin: 'inherit',
+                justifyItems: 'inherit',
+                justifyContent: 'inherit',
+                alignContent: 'inherit',
+                alignItems: 'inherit',
+            },
+        };
+
+        return {
+            ...props,
+            sx: newSxProps,
+        };
+    }
 );
 
 /**

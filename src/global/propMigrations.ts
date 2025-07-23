@@ -24,18 +24,21 @@ export const V2OpenablePositionableProps = [
 export const openablePositionableExtraTranslation = (props: Record<string, any>) => {
     const { positioning, ...rest } = props;
 
+    const onOpenClose = (() => {
+        if (props?.onOpenChange) {
+            return {
+                onOpen: () => props.onOpenChange({ open: true }),
+                onClose: () => props.onOpenChange({ open: false }),
+            };
+        }
+        return {};
+    })();
+
     return {
         ...rest,
+        ...onOpenClose,
         placement: positioning?.placement,
         strategy: positioning?.strategy,
         offset: positioning?.offset,
-        onOpen: () =>
-            props?.onOpenChange({
-                open: true,
-            }),
-        onClose: () =>
-            props?.onOpenChange({
-                open: false,
-            }),
     };
 };
