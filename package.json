@@ -9,9 +9,13 @@
   "types": "dist/index.d.ts",
   "main": "dist/chakra-cross-compatibility.cjs.js",
   "module": "dist/chakra-cross-compatibility.es.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build:packages": "npm run build --workspaces",
+    "build": "npm run build:packages && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -10,6 +10,9 @@ export type Merge<T, U> = {
     : never;
 };
 
+/**
+ * Props that do not exist in Chakra v2 but are used in Chakra v3.
+ */
 export type UniversalNewProps = {
   asChild?: boolean;
 };

@@ -1,4 +1,11 @@
+import type { chakrav2 } from "../packages/chakra-ts-compatibility-layer/dist";
 import type { TupleToMappedType } from "./types";
+
+/**
+ * @inline
+ * Internal type guard to imitate the current namespace as Chakra v2.
+ */
+export const chakraAsV2 = (chakra: any) => chakra as unknown as chakrav2;
 
 /**
  * Maps a tuple of translations to an object with custom typing.

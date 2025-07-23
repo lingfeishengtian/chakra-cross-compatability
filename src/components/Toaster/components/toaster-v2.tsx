@@ -1,7 +1,7 @@
-import type { chakrav2 } from "../../../../packages/chakra-ts-compatibility-layer/dist";
-import { chakraVersionSplitter } from "../../../global/chakraVersionSplitter";
+import { chakraAsV2 } from "../../../utils";
 import { setV2CreateToaster } from "../globals";
 import type { ToastOptions, V2Placement, V3Placement } from "../types";
+import * as chakra from "@chakra-ui/react";
 
 const placementTranslation: Record<V3Placement, V2Placement> = {
   "top-start": "top-left",
@@ -13,7 +13,7 @@ const placementTranslation: Record<V3Placement, V2Placement> = {
 };
 
 export const Toaster = () => {
-  const { useToast } = chakraVersionSplitter<chakrav2>();
+  const { useToast } = chakraAsV2(chakra);
   const toast = useToast();
 
   setV2CreateToaster((ToastOptions: ToastOptions<string>) => {
