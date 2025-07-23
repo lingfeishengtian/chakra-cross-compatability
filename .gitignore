@@ -29,3 +29,5 @@ declarations_tmp
 tsconfig.tsbuildinfo
 
 *.tgz
+*storybook.log
+storybook-static

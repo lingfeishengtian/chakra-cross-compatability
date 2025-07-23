@@ -1,51 +1,52 @@
 {
-  "name": "chakra-cross-compatibility",
-  "description": "A library to provide cross-version compatibility for Chakra UI components",
-  "version": "0.1.0",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
-  "main": "dist/chakra-cross-compatibility.cjs.js",
-  "module": "dist/chakra-cross-compatibility.es.js",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build:packages": "npm run build --workspaces",
-    "build": "npm run build:packages && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "peerDependencies": {
-    "@chakra-ui/react": "^2.10.9 || ^3.22.0",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
-  },
-  "devDependencies": {
-    "@chakra-ui/react": "^3.22.0",
-    "@eslint/js": "^9.30.1",
-    "@rollup/plugin-typescript": "^12.1.4",
-    "@types/node": "^24.0.15",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^4.6.0",
-    "chakra-ts-compatibility-layer": "./packages/chakra-ts-compatibility-layer",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "rollup-plugin-ts": "^3.4.5",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.4",
-    "vite-plugin-dts": "^4.5.4"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.2.3"
-  }
+    "name": "chakra-cross-compatibility",
+    "description": "A library to provide cross-version compatibility for Chakra UI components",
+    "version": "0.1.0",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "types": "dist/index.d.ts",
+    "main": "dist/chakra-cross-compatibility.cjs.js",
+    "module": "dist/chakra-cross-compatibility.es.js",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "vite",
+        "build:packages": "npm run build --workspaces",
+        "build": "npm run build:packages && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "peerDependencies": {
+        "@chakra-ui/react": "^2.10.9 || ^3.22.0",
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0"
+    },
+    "devDependencies": {
+        "@chakra-ui/react": "^3.22.0",
+        "@eslint/js": "^9.30.1",
+        "@rollup/plugin-typescript": "^12.1.4",
+        "@types/node": "^24.0.15",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@vitejs/plugin-react": "^4.6.0",
+        "chakra-ts-compatibility-layer": "./packages/chakra-ts-compatibility-layer",
+        "cross-compatible-stories": "./packages/cross-compatible-stories",
+        "eslint": "^9.30.1",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "eslint-plugin-storybook": "^9.0.18",
+        "globals": "^16.3.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "rollup-plugin-ts": "^3.4.5",
+        "typescript": "~5.8.3",
+        "typescript-eslint": "^8.35.1",
+        "vite": "^7.0.4",
+        "vite-plugin-dts": "^4.5.4"
+    }
 }
