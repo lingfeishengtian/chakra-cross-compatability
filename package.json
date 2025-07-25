@@ -1,7 +1,7 @@
 {
     "name": "chakra-cross-compatibility",
     "description": "A library to provide cross-version compatibility for Chakra UI components",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "type": "module",
     "files": [
         "dist"
@@ -22,7 +22,7 @@
         "build-storybook": "storybook build"
     },
     "peerDependencies": {
-        "@chakra-ui/react": "^2.10.9 || ^3.22.0",
+        "@chakra-ui/react": ">=2.0.0",
         "react": ">=18.0.0",
         "react-dom": ">=18.0.0"
     },

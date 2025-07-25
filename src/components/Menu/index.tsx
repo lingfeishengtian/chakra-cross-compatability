@@ -19,14 +19,7 @@ type BaseMenuRootProps = ChakraVersion extends '3'
     : // @ts-ignore: Since this is compiled with Chakra 3, this type doesn't exist, so ignore it. Since we check ChakraVersion though, this is safe and will work in Chakra 2.
       chakra.MenuProps;
 
-type RootProps = PropType<typeof v2MenuPropEntries, BaseMenuRootProps> & {
-    positioning?: {
-        placement?: 'top' | 'bottom' | 'left' | 'right';
-        strategy?: 'absolute' | 'fixed';
-        offset?: number;
-    };
-    onOpenChange?: (open: { open: boolean }) => void;
-};
+type RootProps = PropType<typeof v2MenuPropEntries, BaseMenuRootProps>;
 
 const MenuRoot: ForwardedRefComponent<RootProps> = createCompatibleComponent(
     // @ts-ignore

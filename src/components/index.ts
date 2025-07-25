@@ -1,6 +1,8 @@
 export { default as Box, type BoxProps } from './Box';
 export { default as Button, type ButtonProps } from './Button';
+export * as Dialog from './Dialog';
 export { default as Flex, type FlexProps } from './Flex';
+export { default as Image, type ImageProps } from './Image';
 export { default as Input, type InputProps } from './Input';
 export { default as InputGroup, type InputGroupProps } from './InputGroup';
 export * as Menu from './Menu';
